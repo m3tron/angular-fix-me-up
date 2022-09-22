@@ -1,10 +1,10 @@
 /**
  * TODO: 10. Asynchronous Programming (RxJS)
- * TODO: 13. Angular (NX) Architecture
+ * DONE: 13. Angular (NX) Architecture
  */
 import { Component, OnInit } from '@angular/core';
-import { Account } from 'libs/shared/services/src/lib/account';
-import { AccountService } from 'libs/shared/services/src/lib/account.service';
+
+import { AccountService, Account } from '@angular-anim/shared/services';
 import { Observable, of } from 'rxjs';
 
 @Component({
