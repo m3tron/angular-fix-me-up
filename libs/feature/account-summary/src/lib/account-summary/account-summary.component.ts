@@ -1,7 +1,7 @@
-/** 
+/**
  * TODO: 10. Asynchronous Programming (RxJS)
  * TODO: 13. Angular (NX) Architecture
-*/
+ */
 import { Component, OnInit } from '@angular/core';
 import { Account } from 'libs/shared/services/src/lib/account';
 import { AccountService } from 'libs/shared/services/src/lib/account.service';
@@ -25,6 +25,9 @@ export class AccountSummaryComponent implements OnInit {
   }
 
   filterAccounts(accounts: Account[]) {
-    return accounts.filter(acc => acc.currency === this.accountsFilter || this.accountsFilter === '');
+    return accounts.filter(
+      (acc) =>
+        acc.currency === this.accountsFilter || this.accountsFilter === ''
+    );
   }
 }
