@@ -3,7 +3,6 @@
  * DONE: 13. Angular (NX) Architecture
  */
 import { Component, OnInit } from '@angular/core';
-
 import { AccountService, Account } from '@angular-anim/shared/services';
 import { Observable, of } from 'rxjs';
 

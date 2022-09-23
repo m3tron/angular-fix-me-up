@@ -1,6 +1,6 @@
-@use "theme";
+@use 'theme';
 
-section {
+footer {
   height: 40px;
   background: theme.$brand-bg-alt;
   color: white;
@@ -11,12 +11,16 @@ section {
   justify-content: space-between;
 }
 
-// TODO: 11. The Last Link is only suppose to be offset from the side of the screen
+// DONE: 11. The Last Link is only suppose to be offset from the side of the screen
 // by 20px, what can we do to fix this
 .nav-offsite {
   a {
-    // TODO: 12. something's off with this include
-    // @include link();
+    // DONE: 12. something's off with this include
+    @include theme.link();
     color: white;
+  }
+
+  a:last-child {
+    padding-right: 0;
   }
 }

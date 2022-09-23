@@ -21,8 +21,13 @@
         <th>
           <a [routerLink]="['/account', account.id]">{{ account.id }}</a>
         </th>
-        <td>{{ account.balance }}</td>
-        <td>{{ account.currency }}</td>
+        <td>
+          {{
+            account.balance
+              | currency: (account.currency | uppercase):'symbol-narrow'
+          }}
+        </td>
+        <td>{{ account.currency | uppercase }}</td>
       </tr>
     </table>
   </section>

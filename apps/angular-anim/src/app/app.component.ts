@@ -1,5 +1,4 @@
 import { SideNavItem } from '@angular-anim/shared/presentational';
-import { Account } from '@angular-anim/shared/services';
 import { UserFacade } from '@angular-anim/shared/store';
 import { Component, OnInit } from '@angular/core';
 import { startWith } from 'rxjs';
@@ -13,7 +12,6 @@ export class AppComponent implements OnInit {
   sideNavItems: SideNavItem[] = [];
   user$ = this.userFacade.getUser();
   userName$ = this.userFacade.getUserName().pipe(startWith('Not Logged In'));
-  account!: Account;
 
   constructor(private userFacade: UserFacade) {}
 
@@ -23,9 +21,6 @@ export class AppComponent implements OnInit {
       { title: 'Transfers', subtitle: '', link: '/transfers' },
       { title: 'About Challenge', subtitle: '', link: '/about' },
     ];
-  }
-
-  onClick(account: Account) {
-    this.account = account;
+    console.log(this.userFacade.getUserName());
   }
 }

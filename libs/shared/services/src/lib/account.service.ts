@@ -12,6 +12,7 @@ export class AccountService {
     return of(accounts);
   }
 
+  // *** REVISIT AND REVISE ***
   getAccount(id: string) {
     const accounts: Account[] = ACCOUNTS;
     return accounts.find((account) => account.id === id);

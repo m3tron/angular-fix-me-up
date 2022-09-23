@@ -5,14 +5,12 @@ import { FooterComponent } from './footer/footer.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { RouterModule } from '@angular/router';
 
-const EXPORTS = [
-  HeaderComponent, FooterComponent, SideNavComponent
-];
+const EXPORTS = [HeaderComponent, FooterComponent, SideNavComponent];
 
 @NgModule({
   // remove RouterModule
   imports: [CommonModule, RouterModule],
   declarations: [...EXPORTS],
-  exports: [...EXPORTS]
+  exports: [...EXPORTS],
 })
 export class FeaturePresentationalModule {}
