@@ -1,1 +1,29 @@
-<p>transfers works!</p>
+<h1>Transfer Funds</h1>
+
+<form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+  <label>From</label>
+  <select
+    [formControl]="transferForm.controls.from"
+    (change)="onChange($event)"
+  >
+    <option value="">----Select----</option>
+    <option *ngFor="let account of accounts" [ngValue]="account.id">
+      {{ account.id }}
+    </option>
+  </select>
+
+  <label>Recepient</label>
+  <select [formControl]="transferForm.controls.to">
+    <option>----Select----</option>
+    <option *ngFor="let account of toAccounts" [ngValue]="account.id">
+      {{ account.id }}
+    </option>
+    >
+  </select>
+
+  <input [formControl]="transferForm.controls.amount" />
+
+  <button>Submit</button>
+</form>
+
+<p>{{ transferForm.value | json }}</p>

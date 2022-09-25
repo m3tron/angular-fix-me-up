@@ -12,9 +12,16 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { TransfersComponent } from './transfers/transfers.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent, TransfersComponent],
+  declarations: [
+    AppComponent,
+    AboutComponent,
+    TransfersComponent,
+    AccountDetailsComponent,
+  ],
   imports: [
     BrowserModule,
     CommonModule,
@@ -28,6 +35,7 @@ import { TransfersComponent } from './transfers/transfers.component';
       logOnly: environment.production, // Restrict extension to log-only mode
       autoPause: true, // Pauses recording actions and state changes when the extension window is not open
     }),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

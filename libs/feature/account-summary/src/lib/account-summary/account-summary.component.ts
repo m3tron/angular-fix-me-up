@@ -16,11 +16,17 @@ export class AccountSummaryComponent implements OnInit {
   constructor(private accountService: AccountService) {}
   accounts: Account[] = [];
   accountsFilter = '';
+  currencies!: string[];
 
   ngOnInit(): void {
     this.accountService.getAccounts().subscribe((accounts) => {
       this.accounts = accounts;
     });
+
+    this.currencies = [
+      ...new Set(this.accounts.map((account) => account.currency)),
+    ];
+    console.log(this.currencies);
   }
 
   filterAccounts(accounts: Account[]) {

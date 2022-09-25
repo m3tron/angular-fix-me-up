@@ -1,6 +1,6 @@
 @use 'theme';
 
-footer {
+section {
   height: 40px;
   background: theme.$brand-bg-alt;
   color: white;
@@ -22,5 +22,27 @@ footer {
 
   a:last-child {
     padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    flex-direction: column;
+    height: fit-content;
+    padding: theme.$brand-padding;
+  }
+
+  .nav-offsite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: theme.$brand-padding;
+
+    a:last-child {
+      padding-right: theme.$brand-padding;
+    }
+    a {
+      margin-block: theme.$unit;
+    }
   }
 }

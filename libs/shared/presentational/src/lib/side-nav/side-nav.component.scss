@@ -1,14 +1,50 @@
 @use 'theme';
 
+nav {
+  background-color: theme.$brand-bg;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  z-index: 100;
+  left: -100%;
+  position: absolute;
+  padding: theme.$brand-padding 0;
+  transition: 0.3s;
+  top: 40px;
+  width: 250px;
+}
+
 // DONE: 14. fix the deprecation
 a {
   @include theme.link();
-  padding-top: theme.$unit;
-  padding-bottom: theme.$unit;
+  padding: theme.$brand-padding;
+  // padding
+  color: theme.$brand-font-color-inverted;
   display: inline-block;
   &:hover {
-    background: theme.$brand-bg;
-    color: white;
+    background: theme.$brand-bg-alt;
+    //color: theme.$brand-bg;
     transition: 0.3s;
   }
+}
+
+a:first-child {
+  margin-top: theme.$unit;
+}
+
+div.menu-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  z-index: 150;
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  padding: theme.$unit;
+}
+
+.open {
+  left: 0;
 }

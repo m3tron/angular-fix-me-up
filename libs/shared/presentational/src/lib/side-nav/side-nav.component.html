@@ -1,5 +1,16 @@
-<div>
-  <a *ngFor="let item of sideNavItems" [routerLink]="item.link">{{
-    item.title
-  }}</a>
+<div
+  (click)="onOpen()"
+  class="menu-toggle"
+  [ngClass]="{ 'menu-toggle-open': open === true }"
+>
+  &#9776;
 </div>
+
+<nav [ngClass]="{ open: open === true }">
+  <a
+    (click)="onOpen()"
+    *ngFor="let item of sideNavItems"
+    [routerLink]="item.link"
+    >{{ item.title }}</a
+  >
+</nav>
