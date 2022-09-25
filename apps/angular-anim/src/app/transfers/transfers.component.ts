@@ -13,6 +13,7 @@ export class TransfersComponent implements OnInit, OnDestroy {
   unsubscribe$ = new Subject<void>();
   accounts: Account[] = [];
 
+  filter = '';
   toAccounts!: Account[];
 
   transferForm = new FormGroup({
@@ -20,6 +21,9 @@ export class TransfersComponent implements OnInit, OnDestroy {
     to: new FormControl('', [Validators.required]),
     amount: new FormControl('', [Validators.required]),
   });
+
+  errors = this.transferForm.errors;
+  error = '';
 
   constructor(private accountService: AccountService) {}
 
@@ -32,19 +36,35 @@ export class TransfersComponent implements OnInit, OnDestroy {
       });
   }
 
-  onChange(e: any) {
-    this.filteredAccounts(e.target.value);
+  onChange() {
+    this.filteredAccounts(this.filter);
     this.transferForm.controls.to.setValue('');
   }
 
   filteredAccounts(id: string) {
     this.toAccounts = this.accounts.filter(
-      (account) => account.id !== id.slice(3) || ''
+      (account) => account.id !== id || ''
     );
   }
 
   onSubmit() {
-    console.log(this.transferForm.value);
+    if (this.transferForm.invalid) {
+      return;
+    }
+
+    try {
+      console.log(this.transferForm.value);
+      this.accountService.createTransfer(this.transferForm.value);
+    } catch (error: any) {
+      console.log(error.message);
+      this.error = error.message;
+    }
+  }
+
+  showErrors() {
+    const { dirty, touched, errors } = this.transferForm.controls.amount;
+
+    return dirty && touched && errors;
   }
 
   ngOnDestroy(): void {

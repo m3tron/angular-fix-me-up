@@ -15,15 +15,6 @@ label {
   text-align: start;
 }
 
-option {
-  padding: none;
-}
-
-option:hover {
-  background-color: theme.$brand-bg;
-  color: theme.$brand-font-color;
-}
-
 button {
   margin-top: 3rem;
   background-color: theme.$brand-bg;

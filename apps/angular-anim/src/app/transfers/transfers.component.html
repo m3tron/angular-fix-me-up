@@ -5,33 +5,78 @@
     <label>From</label>
     <select
       [formControl]="transferForm.controls.from"
-      (change)="onChange($event)"
       class="custom-input"
+      [(ngModel)]="filter"
+      (change)="onChange()"
     >
-      <option value="">----Select----</option>
       <option *ngFor="let account of accounts" [ngValue]="account.id">
         {{ account.id }}
+        |
+        {{
+          account.balance
+            | currency: (account.currency | uppercase):'symbol-narrow'
+        }}
       </option>
     </select>
   </div>
-
+  <div
+    class="input-error"
+    *ngIf="
+      transferForm.controls.from.dirty &&
+      transferForm.controls.from.touched &&
+      transferForm.controls.from.errors
+    "
+  >
+    <p>Value is required</p>
+  </div>
   <div class="input-container">
     <label>Recepient</label>
     <select class="custom-input" [formControl]="transferForm.controls.to">
-      <option></option>
       <option *ngFor="let account of toAccounts" [ngValue]="account.id">
-        {{ account.id }}
+        {{ account.id }} |
+        {{
+          account.balance
+            | currency: (account.currency | uppercase):'symbol-narrow'
+        }}
       </option>
       >
     </select>
   </div>
+  <div
+    class="input-error"
+    *ngIf="
+      transferForm.controls.to.dirty &&
+      transferForm.controls.to.touched &&
+      transferForm.controls.to.errors
+    "
+  >
+    <p>Value is required</p>
+  </div>
 
   <div class="input-container">
     <label>Amount</label>
-    <input class="custom-input" [formControl]="transferForm.controls.amount" />
+    <input
+      type="number"
+      class="custom-input"
+      [formControl]="transferForm.controls.amount"
+    />
   </div>
-
+  <div
+    class="input-error"
+    *ngIf="
+      transferForm.controls.amount.dirty &&
+      transferForm.controls.amount.touched &&
+      transferForm.controls.amount.errors
+    "
+  >
+    <p>Value is required</p>
+  </div>
+  <div class="input-error" *ngIf="error">
+    <p>{{ error }}</p>
+  </div>
   <button>Submit</button>
 </form>
 
 <p>{{ transferForm.value | json }}</p>
+<p>{{ filter }}</p>
+<p>{{ errors | json }}</p>
