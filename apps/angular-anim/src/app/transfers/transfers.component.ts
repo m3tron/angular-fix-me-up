@@ -24,6 +24,7 @@ export class TransfersComponent implements OnInit, OnDestroy {
 
   errors = this.transferForm.errors;
   error = '';
+  success = false;
 
   constructor(private accountService: AccountService) {}
 
@@ -53,18 +54,15 @@ export class TransfersComponent implements OnInit, OnDestroy {
     }
 
     try {
-      console.log(this.transferForm.value);
       this.accountService.createTransfer(this.transferForm.value);
+      this.success = true;
+      this.error = '';
+
+      this.transferForm.reset();
     } catch (error: any) {
-      console.log(error.message);
       this.error = error.message;
+      this.success = false;
     }
-  }
-
-  showErrors() {
-    const { dirty, touched, errors } = this.transferForm.controls.amount;
-
-    return dirty && touched && errors;
   }
 
   ngOnDestroy(): void {

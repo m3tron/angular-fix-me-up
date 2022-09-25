@@ -24,6 +24,11 @@ button {
   color: theme.$brand-font-color-inverted;
   font-size: 1rem;
   cursor: pointer;
+  box-shadow: 0 0 10px theme.$brand-bg-alt;
+}
+
+button:disabled {
+  cursor: no-drop;
 }
 
 .input-container {
@@ -31,6 +36,15 @@ button {
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
+}
+
+.success {
+  background-color: rgb(131, 253, 131);
+  padding: theme.$brand-padding;
+  width: 150px;
+  text-align: center;
+  margin: 1rem auto;
+  border-radius: 10px;
 }
 
 // .custom-input {

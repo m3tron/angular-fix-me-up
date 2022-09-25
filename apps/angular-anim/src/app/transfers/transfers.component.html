@@ -50,7 +50,7 @@
       transferForm.controls.to.errors
     "
   >
-    <p>Value is required</p>
+    <p>Please select an account</p>
   </div>
 
   <div class="input-container">
@@ -74,8 +74,10 @@
   <div class="input-error" *ngIf="error">
     <p>{{ error }}</p>
   </div>
-  <button>Submit</button>
+  <button [disabled]="transferForm.invalid">Submit</button>
 </form>
+
+<div *ngIf="success" class="success"><p>Success!</p></div>
 
 <p>{{ transferForm.value | json }}</p>
 <p>{{ filter }}</p>
