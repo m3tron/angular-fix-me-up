@@ -5,7 +5,9 @@ h1 {
 }
 
 th[scope='col'] {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid theme.$brand-borders;
+  background-color: theme.$brand-bg;
+  color: theme.$brand-font-color-inverted;
 }
 
 th,
@@ -27,8 +29,9 @@ tr {
 }
 
 tr:nth-child(n + 2):hover {
-  background-color: theme.$brand-bg;
+  background-color: theme.$brand-bg-alt;
   color: theme.$brand-font-color-inverted;
+  transition: 0.3s;
 
   a {
     color: theme.$brand-font-color-inverted;
@@ -43,4 +46,16 @@ td:nth-child(2) {
 table {
   width: 100%;
   border-spacing: 0;
+}
+
+.currency-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.custom-input {
+  width: 75px;
 }

@@ -1,20 +1,23 @@
 <h1>Account Summary</h1>
-<!-- TODO: 6. Angular ngFor, refactor, and bonus points -->
+<!-- DONE: 6. Angular ngFor, refactor, and bonus points -->
 <!-- TODO: 7. Accessibility, table markup, form control -->
 <div class="account-summary">
   <section>
+    <div class="currency-container">
+      <label>Currency</label>
+      <select class="custom-input" [(ngModel)]="accountsFilter">
+        <option value="">All</option>
+        <option *ngFor="let currency of currencies" [ngValue]="currency">
+          {{ currency | uppercase }}
+        </option>
+      </select>
+    </div>
     <table>
       <tr>
         <th scope="col">Account Name</th>
         <th scope="col">Balance</th>
         <th scope="col">
           <label>Account Type</label>
-          <select [(ngModel)]="accountsFilter">
-            <option value="">None</option>
-            <option *ngFor="let currency of currencies" [ngValue]="currency">
-              {{ currency | uppercase }}
-            </option>
-          </select>
         </th>
       </tr>
       <tr *ngFor="let account of filterAccounts(accounts)">

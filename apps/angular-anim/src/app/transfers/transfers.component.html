@@ -1,27 +1,35 @@
 <h1>Transfer Funds</h1>
 
 <form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
-  <label>From</label>
-  <select
-    [formControl]="transferForm.controls.from"
-    (change)="onChange($event)"
-  >
-    <option value="">----Select----</option>
-    <option *ngFor="let account of accounts" [ngValue]="account.id">
-      {{ account.id }}
-    </option>
-  </select>
-
-  <label>Recepient</label>
-  <select [formControl]="transferForm.controls.to">
-    <option>----Select----</option>
-    <option *ngFor="let account of toAccounts" [ngValue]="account.id">
-      {{ account.id }}
-    </option>
+  <div class="input-container">
+    <label>From</label>
+    <select
+      [formControl]="transferForm.controls.from"
+      (change)="onChange($event)"
+      class="custom-input"
     >
-  </select>
+      <option value="">----Select----</option>
+      <option *ngFor="let account of accounts" [ngValue]="account.id">
+        {{ account.id }}
+      </option>
+    </select>
+  </div>
 
-  <input [formControl]="transferForm.controls.amount" />
+  <div class="input-container">
+    <label>Recepient</label>
+    <select class="custom-input" [formControl]="transferForm.controls.to">
+      <option></option>
+      <option *ngFor="let account of toAccounts" [ngValue]="account.id">
+        {{ account.id }}
+      </option>
+      >
+    </select>
+  </div>
+
+  <div class="input-container">
+    <label>Amount</label>
+    <input class="custom-input" [formControl]="transferForm.controls.amount" />
+  </div>
 
   <button>Submit</button>
 </form>

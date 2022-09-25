@@ -4,7 +4,52 @@
   text-align: center;
 }
 
-.transfer-container {
+form {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
+
+label {
+  width: 100px;
+  text-align: start;
+}
+
+option {
+  padding: none;
+}
+
+option:hover {
+  background-color: theme.$brand-bg;
+  color: theme.$brand-font-color;
+}
+
+button {
+  margin-top: 3rem;
+  background-color: theme.$brand-bg;
+  border: none;
+  padding: theme.$brand-padding;
+  border-radius: 10px;
+  color: theme.$brand-font-color-inverted;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+// .custom-input {
+//   appearance: none;
+//   border: none;
+//   border-bottom: 1px solid theme.$brand-borders;
+//   padding: theme.$brand-padding;
+//   width: 200px;
+//   font-size: 1rem;
+// }
+
+// @media screen and (max-width: ) {
+// }

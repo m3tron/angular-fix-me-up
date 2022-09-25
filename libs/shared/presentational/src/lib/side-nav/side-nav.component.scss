@@ -48,3 +48,7 @@ div.menu-toggle {
 .open {
   left: 0;
 }
+
+.active {
+  background-color: theme.$brand-bg-alt;
+}
