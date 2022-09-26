@@ -1,0 +1,22 @@
+@use 'theme';
+
+:host {
+  text-align: center;
+}
+
+table {
+  margin: auto;
+}
+
+tr,
+td {
+  padding: theme.$brand-padding;
+}
+
+td:first-child {
+  text-align: left;
+}
+
+td:last-child {
+  text-align: right;
+}

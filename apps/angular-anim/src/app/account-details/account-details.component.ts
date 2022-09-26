@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AccountService, Account } from '@angular-anim/shared/services';
 
 @Component({
   selector: 'angular-anim-account-details',
@@ -6,5 +8,16 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./account-details.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AccountDetailsComponent {
+export class AccountDetailsComponent implements OnInit {
+  account?: Account;
+  id: string = this.route.snapshot.params['id'];
+
+  constructor(
+    private route: ActivatedRoute,
+    private accountService: AccountService
+  ) {}
+
+  ngOnInit() {
+    this.account = this.accountService.getAccount(this.id);
+  }
 }

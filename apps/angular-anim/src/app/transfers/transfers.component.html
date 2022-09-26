@@ -1,0 +1,80 @@
+<h1>Transfer Funds</h1>
+
+<form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+  <div class="input-container">
+    <label>From</label>
+    <select
+      [formControl]="transferForm.controls.from"
+      class="custom-input"
+      [(ngModel)]="filter"
+      (change)="onChange()"
+    >
+      <option *ngFor="let account of accounts" [ngValue]="account.id">
+        {{ account.id }}
+        |
+        {{
+          account.balance
+            | currency: (account.currency | uppercase):'symbol-narrow'
+        }}
+      </option>
+    </select>
+  </div>
+  <div
+    class="input-error"
+    *ngIf="
+      transferForm.controls.from.dirty &&
+      transferForm.controls.from.touched &&
+      transferForm.controls.from.errors
+    "
+  >
+    <p>Value is required</p>
+  </div>
+  <div class="input-container">
+    <label>Recepient</label>
+    <select class="custom-input" [formControl]="transferForm.controls.to">
+      <option *ngFor="let account of toAccounts" [ngValue]="account.id">
+        {{ account.id }} |
+        {{
+          account.balance
+            | currency: (account.currency | uppercase):'symbol-narrow'
+        }}
+      </option>
+      >
+    </select>
+  </div>
+  <div
+    class="input-error"
+    *ngIf="
+      transferForm.controls.to.dirty &&
+      transferForm.controls.to.touched &&
+      transferForm.controls.to.errors
+    "
+  >
+    <p>Please select an account</p>
+  </div>
+
+  <div class="input-container">
+    <label>Amount</label>
+    <input
+      type="number"
+      class="custom-input"
+      [formControl]="transferForm.controls.amount"
+    />
+  </div>
+  <div
+    class="input-error"
+    *ngIf="
+      transferForm.controls.amount.dirty &&
+      transferForm.controls.amount.touched &&
+      transferForm.controls.amount.errors
+    "
+  >
+    <p>Value is required</p>
+  </div>
+  <div class="input-error" *ngIf="error">
+    <p>{{ error }}</p>
+  </div>
+  <button [disabled]="transferForm.invalid">Submit</button>
+</form>
+
+<div *ngIf="success" class="success"><p>Success!</p></div>

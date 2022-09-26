@@ -1,7 +1,61 @@
+@use 'theme';
+
+h1 {
+  text-align: center;
+}
+
 th[scope='col'] {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid theme.$brand-borders;
+  background-color: theme.$brand-bg;
+  color: theme.$brand-font-color-inverted;
+}
+
+th,
+td {
+  padding: theme.$brand-padding 0;
 }
 
 tr:nth-child(2n) {
-  background-color: #DEDEDE;
+  background-color: #dedede;
+}
+
+tr {
+  text-align: center;
+
+  a {
+    @include theme.link();
+    color: theme.$brand-font-color;
+  }
+}
+
+tr:nth-child(n + 2):hover {
+  background-color: theme.$brand-bg-alt;
+  color: theme.$brand-font-color-inverted;
+  transition: 0.3s;
+
+  a {
+    color: theme.$brand-font-color-inverted;
+  }
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  text-align: end;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+.currency-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.custom-input {
+  width: 100px;
 }

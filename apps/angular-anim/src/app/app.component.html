@@ -1,12 +1,18 @@
 <!-- NOTE: changes not just in this component -->
-<!-- TODO: 3. Use Semantic HTML properly, what's wrong with this usage of main -->
-<!-- TODO: 4. Our header and footer are suppose to fill the full width of the page and sit flush to the top / bottom -->
+<!-- DONE: 3. Use Semantic HTML properly, what's wrong with this usage of main -->
+<!-- DONE: 4. Our header and footer are suppose to fill the full width of the page and sit flush to the top / bottom -->
 <!-- e.g. no whitespace around the header / footer -->
-<main>
+<header>
   <pre-header [userName]="userName$"></pre-header>
-  <section>
+  <nav>
     <pre-side-nav [sideNavItems]="sideNavItems"></pre-side-nav>
+  </nav>
+</header>
+<main>
+  <section>
     <router-outlet></router-outlet>
   </section>
-  <pre-footer></pre-footer>
 </main>
+<footer>
+  <pre-footer></pre-footer>
+</footer>

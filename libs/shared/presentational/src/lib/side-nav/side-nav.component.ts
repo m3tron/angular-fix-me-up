@@ -8,4 +8,9 @@ import { SideNavItem } from '../models/side-nav';
 })
 export class SideNavComponent {
   @Input() sideNavItems: SideNavItem[] = [];
+  open = false;
+
+  onOpen() {
+    this.open = !this.open;
+  }
 }

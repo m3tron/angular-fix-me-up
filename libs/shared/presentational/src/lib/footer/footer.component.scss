@@ -1,9 +1,9 @@
-@use "theme";
+@use 'theme';
 
 section {
   height: 40px;
   background: theme.$brand-bg-alt;
-  color: white;
+  color: theme.$brand-font-color-inverted;
   padding-right: theme.$brand-padding;
   padding-left: theme.$brand-padding;
   display: flex;
@@ -11,12 +11,38 @@ section {
   justify-content: space-between;
 }
 
-// TODO: 11. The Last Link is only suppose to be offset from the side of the screen
+// DONE: 11. The Last Link is only suppose to be offset from the side of the screen
 // by 20px, what can we do to fix this
 .nav-offsite {
   a {
-    // TODO: 12. something's off with this include
-    // @include link();
-    color: white;
+    // DONE: 12. something's off with this include
+    @include theme.link();
+    color: theme.$brand-font-color-inverted;
+  }
+
+  a:last-child {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+    flex-direction: column;
+    height: fit-content;
+    padding: theme.$brand-padding;
+  }
+
+  .nav-offsite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: theme.$brand-padding;
+
+    a:last-child {
+      padding-right: theme.$brand-padding;
+    }
+    a {
+      margin-block: theme.$unit;
+    }
   }
 }

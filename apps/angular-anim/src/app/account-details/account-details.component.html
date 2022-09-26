@@ -1,4 +1,23 @@
 <h1>Account Details</h1>
 
-<p>Account ID</p>
-<!-- TODO: how to retrieve account id and other account details in this route? -->
+<table *ngIf="account">
+  <tr>
+    <td>Account ID</td>
+    <td>{{ account.id }}</td>
+  </tr>
+
+  <tr>
+    <td>Account Balance</td>
+    <td>
+      {{
+        account.balance
+          | currency: (account.currency | uppercase):'symbol-narrow'
+      }}
+    </td>
+  </tr>
+
+  <tr>
+    <td>Currency Type</td>
+    <td>{{ account.currency | uppercase }}</td>
+  </tr>
+</table>
