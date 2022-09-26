@@ -23,6 +23,7 @@ export class RegisterComponent {
       return;
     }
     try {
+      //move this to its own service
       this.store.dispatch(
         userActions.CreateUser({ user: this.registerForm.value })
       );

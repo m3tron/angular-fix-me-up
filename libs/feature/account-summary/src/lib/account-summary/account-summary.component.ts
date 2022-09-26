@@ -40,6 +40,7 @@ export class AccountSummaryComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    //turn this in class and extend
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
   }
