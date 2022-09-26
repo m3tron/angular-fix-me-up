@@ -19,6 +19,9 @@ export class RegisterComponent {
   constructor(private store: Store, private router: Router) {}
 
   onSubmit() {
+    if (this.registerForm.invalid) {
+      return;
+    }
     try {
       this.store.dispatch(
         userActions.CreateUser({ user: this.registerForm.value })
