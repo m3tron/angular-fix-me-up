@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
       { title: 'Account Overview', subtitle: '', link: '/summary' },
       { title: 'Transfers', subtitle: '', link: '/transfers' },
       { title: 'About Challenge', subtitle: '', link: '/about' },
+      { title: 'Register', subtitle: '', link: '/' },
     ];
   }
 }

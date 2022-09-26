@@ -11,11 +11,9 @@ export class AppGuard implements CanActivate {
   constructor(private router: Router, private userFacade: UserFacade) {}
 
   canActivate() {
-    const user = this.user$.pipe();
+    return true;
 
     // TODO: check if there a !user and redirect to /register
     // move to service
-
-    return true;
   }
 }
