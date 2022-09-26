@@ -3,7 +3,7 @@
 section {
   height: 40px;
   background: theme.$brand-bg-alt;
-  color: white;
+  color: theme.$brand-font-color-inverted;
   padding-right: theme.$brand-padding;
   padding-left: theme.$brand-padding;
   display: flex;
@@ -17,7 +17,7 @@ section {
   a {
     // DONE: 12. something's off with this include
     @include theme.link();
-    color: white;
+    color: theme.$brand-font-color-inverted;
   }
 
   a:last-child {
