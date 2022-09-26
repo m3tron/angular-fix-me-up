@@ -14,6 +14,9 @@ import { environment } from '../environments/environment';
 import { TransfersComponent } from './transfers/transfers.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RegisterComponent } from './register/register.component';
+import { SignOutComponent } from './sign-out/sign-out.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     TransfersComponent,
     AccountDetailsComponent,
+    NotFoundComponent,
+    RegisterComponent,
+    SignOutComponent,
   ],
   imports: [
     BrowserModule,

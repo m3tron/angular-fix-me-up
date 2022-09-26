@@ -1,0 +1,29 @@
+<h1>Register</h1>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="input-container">
+    <label>Name</label>
+    <input class="custom-input" [formControl]="registerForm.controls.name" />
+  </div>
+
+  <div class="input-container">
+    <label>Address</label>
+    <input class="custom-input" [formControl]="registerForm.controls.address" />
+  </div>
+
+  <div class="input-container">
+    <label>Phone</label>
+    <input
+      type="number"
+      class="custom-input"
+      [formControl]="registerForm.controls.phone"
+    />
+  </div>
+
+  <div class="input-container">
+    <label>Roles</label>
+    <input class="custom-input" [formControl]="registerForm.controls.roles" />
+  </div>
+
+  <button class="btn">Register</button>
+</form>

@@ -5,7 +5,7 @@ import { userActions } from './user-actions';
 export const userKey = 'userStore';
 
 export const initialState: UserState = {
-  loggedInUser: { name: 'John', address: '', phone: '', roles: [''] },
+  loggedInUser: undefined,
 };
 
 export const userReducer = createReducer(

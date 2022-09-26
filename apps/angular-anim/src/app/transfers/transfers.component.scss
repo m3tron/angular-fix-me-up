@@ -20,22 +20,11 @@ button {
   background-color: theme.$brand-bg;
   border: none;
   padding: theme.$brand-padding;
-  border-radius: 10px;
+  border-radius: 5px;
   color: theme.$brand-font-color-inverted;
   font-size: 1rem;
   cursor: pointer;
   box-shadow: 0 0 10px theme.$brand-bg-alt;
-}
-
-button:disabled {
-  cursor: no-drop;
-}
-
-.input-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
 }
 
 .success {
@@ -44,17 +33,5 @@ button:disabled {
   width: 150px;
   text-align: center;
   margin: 1rem auto;
-  border-radius: 10px;
+  border-radius: 5px;
 }
-
-// .custom-input {
-//   appearance: none;
-//   border: none;
-//   border-bottom: 1px solid theme.$brand-borders;
-//   padding: theme.$brand-padding;
-//   width: 200px;
-//   font-size: 1rem;
-// }
-
-// @media screen and (max-width: ) {
-// }

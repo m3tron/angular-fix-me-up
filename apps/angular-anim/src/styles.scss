@@ -23,6 +23,17 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
+button:disabled {
+  cursor: no-drop;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
 .custom-input {
   appearance: none;
   border: none;
@@ -39,6 +50,18 @@ input[type='number'] {
   background-color: rgb(250, 84, 84);
   margin-top: 1rem;
   padding: 0 theme.$unit;
-  //border-radius: 10px;
+  border-radius: 5px;
   color: theme.$brand-font-color-inverted;
+}
+
+.btn {
+  margin-top: 3rem;
+  background-color: theme.$brand-bg;
+  border: none;
+  padding: theme.$brand-padding;
+  border-radius: 5px;
+  color: theme.$brand-font-color-inverted;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px theme.$brand-bg-alt;
 }

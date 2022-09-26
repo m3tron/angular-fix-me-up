@@ -17,8 +17,4 @@ export class UserFacade {
   getUserName(): Observable<string> {
     return this.getUser().pipe(pluck('name'));
   }
-
-  // createUser(): Observable<User> {
-  //   return this.store.dispatch(CreateUser)
-  // }
 }
