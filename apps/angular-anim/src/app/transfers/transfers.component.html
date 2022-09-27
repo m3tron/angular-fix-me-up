@@ -19,15 +19,16 @@
       </option>
     </select>
   </div>
-  <div
-    class="input-error"
-    *ngIf="
-      transferForm.controls.from.dirty &&
-      transferForm.controls.from.touched &&
-      transferForm.controls.from.errors
-    "
-  >
-    <p>Value is required</p>
+  <div class="input-error">
+    <p
+      *ngIf="
+        transferForm.controls.from.dirty &&
+        transferForm.controls.from.touched &&
+        transferForm.controls.from.errors
+      "
+    >
+      Value is required
+    </p>
   </div>
   <div class="input-container">
     <label>Recepient</label>
@@ -42,15 +43,16 @@
       >
     </select>
   </div>
-  <div
-    class="input-error"
-    *ngIf="
-      transferForm.controls.to.dirty &&
-      transferForm.controls.to.touched &&
-      transferForm.controls.to.errors
-    "
-  >
-    <p>Please select an account</p>
+  <div class="input-error">
+    <p
+      *ngIf="
+        transferForm.controls.to.dirty &&
+        transferForm.controls.to.touched &&
+        transferForm.controls.to.errors
+      "
+    >
+      Please select an account
+    </p>
   </div>
 
   <div class="input-container">
@@ -61,15 +63,16 @@
       [formControl]="transferForm.controls.amount"
     />
   </div>
-  <div
-    class="input-error"
-    *ngIf="
-      transferForm.controls.amount.dirty &&
-      transferForm.controls.amount.touched &&
-      transferForm.controls.amount.errors
-    "
-  >
-    <p>Value is required</p>
+  <div class="input-error">
+    <p
+      *ngIf="
+        transferForm.controls.amount.dirty &&
+        transferForm.controls.amount.touched &&
+        transferForm.controls.amount.errors
+      "
+    >
+      Amount is required
+    </p>
   </div>
   <div class="input-error" *ngIf="error">
     <p>{{ error }}</p>

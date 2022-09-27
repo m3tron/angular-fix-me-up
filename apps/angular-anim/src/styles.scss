@@ -31,7 +31,7 @@ button:disabled {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2rem;
+  // margin-top: 2rem;
 }
 
 .custom-input {
@@ -47,11 +47,8 @@ button:disabled {
 }
 
 .input-error {
-  background-color: rgb(250, 84, 84);
-  margin-top: 1rem;
-  padding: 0 theme.$unit;
-  border-radius: 5px;
-  color: theme.$brand-font-color-inverted;
+  height: 3rem;
+  color: red;
 }
 
 .btn {

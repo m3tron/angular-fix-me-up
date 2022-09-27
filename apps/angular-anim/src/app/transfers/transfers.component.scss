@@ -16,7 +16,7 @@ label {
 }
 
 button {
-  margin-top: 3rem;
+  margin-top: 0;
   background-color: theme.$brand-bg;
   border: none;
   padding: theme.$brand-padding;
@@ -28,8 +28,8 @@ button {
 }
 
 .success {
-  background-color: rgb(131, 253, 131);
-  padding: theme.$brand-padding;
+  color: green;
+  padding: theme.$unit;
   width: 150px;
   text-align: center;
   margin: 1rem auto;

@@ -5,10 +5,32 @@
     <label>Name</label>
     <input class="custom-input" [formControl]="registerForm.controls.name" />
   </div>
+  <div class="input-error">
+    <p
+      *ngIf="
+        registerForm.controls.name.dirty &&
+        registerForm.controls.name.touched &&
+        registerForm.controls.name.errors
+      "
+    >
+      Name is required
+    </p>
+  </div>
 
   <div class="input-container">
     <label>Address</label>
     <input class="custom-input" [formControl]="registerForm.controls.address" />
+  </div>
+  <div class="input-error">
+    <p
+      *ngIf="
+        registerForm.controls.address.dirty &&
+        registerForm.controls.address.touched &&
+        registerForm.controls.address.errors
+      "
+    >
+      Address is required
+    </p>
   </div>
 
   <div class="input-container">
@@ -19,11 +41,33 @@
       [formControl]="registerForm.controls.phone"
     />
   </div>
+  <div class="input-error">
+    <p
+      *ngIf="
+        registerForm.controls.phone.dirty &&
+        registerForm.controls.phone.touched &&
+        registerForm.controls.phone.errors
+      "
+    >
+      Phone number is required
+    </p>
+  </div>
 
   <div class="input-container">
     <label>Roles</label>
     <input class="custom-input" [formControl]="registerForm.controls.roles" />
   </div>
+  <div class="input-error">
+    <p
+      *ngIf="
+        registerForm.controls.roles.dirty &&
+        registerForm.controls.roles.touched &&
+        registerForm.controls.roles.errors
+      "
+    >
+      Role is required
+    </p>
+  </div>
 
-  <button class="btn">Register</button>
+  <button [disabled]="registerForm.invalid" class="btn">Register</button>
 </form>
