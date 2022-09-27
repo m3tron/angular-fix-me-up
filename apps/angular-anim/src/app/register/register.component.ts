@@ -16,6 +16,8 @@ export class RegisterComponent {
     phone: new FormControl('', [Validators.required]),
     roles: new FormControl([''], [Validators.required]),
   });
+  error = '';
+
   constructor(private store: Store, private router: Router) {}
 
   onSubmit() {
@@ -27,10 +29,12 @@ export class RegisterComponent {
       this.store.dispatch(
         userActions.CreateUser({ user: this.registerForm.value })
       );
+      this.error = '';
       this.registerForm.reset();
       this.router.navigateByUrl('/summary');
     } catch (error: any) {
       console.log(error.message);
+      this.error = error.message;
     }
   }
 }
